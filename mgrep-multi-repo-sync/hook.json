@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/scripts/mgrep-sync-all.sh \"${CLAUDE_PROJECT_DIR:-$PWD}\" >/dev/null 2>&1 || true",
+            "async": true,
+            "timeout": 600,
+            "statusMessage": "Syncing nested repos to mgrep index"
+          }
+        ]
+      }
+    ]
+  }
+}
